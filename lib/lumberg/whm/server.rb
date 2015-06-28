@@ -220,8 +220,20 @@ module Lumberg
         @account ||= Account.new(server: self)
       end
 
+      def database
+        @database ||= Database.new(server: self)
+      end
+
       def dns
         @dns ||= Dns.new(server: self)
+      end
+
+      def package
+        @package ||= Package.new(server: self)
+      end
+
+      def mail
+        @mail ||= Mail.new(server: self)
       end
 
       def reseller
