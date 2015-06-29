@@ -111,8 +111,8 @@ module Lumberg
       # options - Hash options for API call params (default: {}):
       # This function does not accept parameters.
       def list(options = {})
-        server.perform_request('listpkgs', options.merge(:"api.version" => 1))
+        server.perform_request('listpkgs', options.merge(:"api.version" => 1, response_key: 'data'))
       end
-
+    end
   end
 end

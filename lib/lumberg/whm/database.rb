@@ -4,13 +4,13 @@ module Lumberg
       # Public: Lists the server's database users.
       # This function does not accept parameters.
       def list_users(options = {})
-        server.perform_request('list_database_users', options.merge(:"api.version" => 1))
+        server.perform_request('list_database_users', options.merge(:"api.version" => 1, response_key: 'data'))
       end
 
       # Public: Lists the server's databases.
       # This function does not accept parameters.
       def list(options = {})
-        server.perform_request('list_databases', options.merge(:"api.version" => 1))
+        server.perform_request('list_databases', options.merge(:"api.version" => 1, response_key: 'data'))
       end
 
       # Public: Changes a MySQL® database's name.
